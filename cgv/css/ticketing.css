@@ -1,0 +1,173 @@
+@font-face {
+    font-family: '210 Manbalchungchun L';
+    src: url('../font/TTManbalchungchunL.woff2') format('woff2'),
+        url('../font/TTManbalchungchunL.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '210 Manbalchungchun B';
+    src: url('../font/TTManbalchungchunB.woff2') format('woff2'),
+        url('../font/TTManbalchungchunB.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    font-family: '210 Manbalchungchun L','210 Manbalchungchun B';
+    
+}
+.user_info {
+    
+    float: right;
+    padding-top: 10px;
+    font-size : 0.83vw;
+}
+
+a{
+    display: inline-block;
+    list-style-type: none;
+    text-decoration: none;
+    color: rgb(190, 59, 49);
+}
+
+.clear {
+    clear: left;
+}
+
+article, div {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#menu {
+    height: 50px;
+}
+
+.main1 {
+    width: 50%;
+    height: 100%;
+    margin-left : 35%;
+    list-style-type: none;
+    font-size: 17px;
+    
+}
+
+.main1>li {
+    float: left;
+    width: 25%;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.main1>li:hover {
+    left: 0;
+}
+
+.main1>li a {
+    display: block;
+}
+
+.main1>li a:hover {
+    background: rgba(255, 255, 255, 0);
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+
+body{
+    position: relative;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.background{
+    /* 흰박스 중앙정렬 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 5%);
+
+    /* 백그라운드아이템 플렉스박스 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 55%;
+    padding: 60px 70px;
+
+    /* 모서리둥글게 */
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 2ex;
+    overflow: hidden;
+}
+
+.poster{
+    width: 400px; 
+    height: auto;
+    border-radius: 3%;
+    overflow:hidden;
+}
+.poster_0{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.movie_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 50%;
+}
+
+.select_movie{
+    width:400px; 
+    height:30px; 
+    background-color:rgb(201, 52, 52);
+    padding:5px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 1ex;
+    overflow: hidden;
+}
+
+/* 좌석색깔설명 배치 */
+.select_seat_list{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+.select_seat_list1 i{
+    color: rgb(247, 186, 54);}
+.select_seat_list2 i{
+        color: rgb(190, 59, 49);}
+.select_seat_list3 i{
+            color: rgb(156, 156, 156);}
+
+
+@media screen and (max-width:1200px) {
+    .movie_info{
+        width:500px
+    }
+    .poster{
+        display: none;
+    }
+}

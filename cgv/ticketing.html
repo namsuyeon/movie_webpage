@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/ticketing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>movie ticketing</title>
+
+    <!-- 맨뒤 백 이미지 풀커버 -->
+    <style>
+        body{
+            background-image: url('./img/back2-1.jpg');
+            /* background-repeat: no-repeat; */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="user_info">
+            <a href="login.html">로그인&nbsp;|&nbsp;</a>
+            <a href="join_agree.html">회원가입</a>
+        </div>
+    </header>
+    <nav class="clear">
+        <div id="menu">
+            <ul class="main1">
+                <li><a href="movie.html">영화</a></li>
+                <li><a href="ticketing.html">예매</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="display">
+        <div class="background">
+
+            <div class="poster">
+                <!-- (왼쪽 디스플레이,) 선택한 영화 포스터(546x752) 출력 -->
+                <img src="./img/poster0.jpg" class="poster_0">
+            </div>
+
+            <div class="movie_info">
+                <!-- (오른쪽 디스플레이) -->
+
+                <div class="select_movie">
+                    <!-- 영화선택버튼 -->
+                    <div>
+                        <span style="color:rgb(255, 255, 255)">Pick a movie  </span> 
+                        <select><option>select movie<option>환승연애 (8,000 won)<option>스트리트우먼파이터(10,000 won)</select><br>
+                    </div>
+                </div>
+        
+                <div class="select_seat_list">
+                    <!-- 좌석색깔 설명 -->
+                    <div style = "padding: 3px 10px 3px 3px;" class="select_seat_list1">
+                        <i class="fas fa-square"></i> Avaliable</ul>
+                    </div>
+                    <div style = "padding: 3px 10px 3px 3px;" class="select_seat_list2">
+                        <i class="fas fa-square"></i> Selected</ul>
+                    </div>
+                    <div style = "padding: 3px 10px 3px 3px;" class="select_seat_list3">
+                        <i class="fas fa-square"></i> Occupied</ul>
+                    </div>
+                </div>
+        
+                <div class="select_seat">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

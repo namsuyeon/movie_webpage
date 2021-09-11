@@ -1,0 +1,52 @@
+@font-face {
+    font-family: '210 Manbalchungchun L';
+    src: url('../font/TTManbalchungchunL.woff2') format('woff2'),
+        url('../font/TTManbalchungchunL.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '210 Manbalchungchun B';
+    src: url('../font/TTManbalchungchunB.woff2') format('woff2'),
+        url('../font/TTManbalchungchunB.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    font-family: '210 Manbalchungchun L','210 Manbalchungchun B';
+    text-align: left;
+}
+
+body{
+    position: relative;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.background{
+    /* 흰박스 중앙정렬 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+
+    /* 백그라운드아이템 플렉스박스 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 55%;
+    padding: 60px 70px;
+
+    /* 모서리둥글게 */
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 2ex;
+    overflow: hidden;
+}

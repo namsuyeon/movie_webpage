@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <style>
+            body{
+                background-image: url('./img/back2-1.jpg');
+                /* background-repeat: no-repeat; */
+                background-size: cover;
+                background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="user_info">
+                <a href="login.html">로그인&nbsp;|&nbsp;</a>
+                <a href="join_agree.html">회원가입</a>
+            </div>
+        </header>
+        <nav class="clear">
+            <div id="menu">
+                <ul class="main1">
+                    <li><a href="movie.html">영화</a></li>
+                    <li><a href="ticketing.html">예매</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main class="display">
+            <div class="background">
+                <h1>JOIN</h1>
+                <p class="small-title">안녕하세요. CGV입니다.</p>
+                <form action="#" method="POST" enctype="multipart/form-data">
+                <div id="signin">
+                    <input id="photo" name="photo" type="file">
+                </div>
+                <div id="signin">
+                    <label class="sign" for="userid">아이디 <span>&centerdot;</span></label><br>
+                    <input id="userid" name="userid" type="text" placeholder="아이디"><br>
+                </div>
+                <div id="signin">
+                    <label class="sign" for="password">비밀번호 <span>&centerdot;</span></label><br>
+                    <input id="pass1" name="pass" type="password" placeholder="비밀번호"><br>
+                    <input id="pass2" type="password" placeholder="비밀번호 확인">
+                </div>
+                <div id="signin">
+                    <label class="sign" for="name">이름 <span>&centerdot;</span></label><br>
+                    <input id="name" name="name" type="text" placeholder="이름을(를) 입력하세요.">
+                </div>
+                <div id="signin">
+                    <label class="sign">성별 <span>&centerdot;</span></label><br>
+                    <div class="gender">
+                        <input id="man" name="gender" type="radio" value="man">
+                        <label for="man">남자</label>
+                        <input id="woman" name="gender" type="radio" value="woman">
+                        <label for="woman">여자</label>
+                    </div>
+                </div>
+                <div id="signin">
+                    <label class="sign" for="phone">연락처 <span>&centerdot;</span></label><br>
+                    <input id="phone" type="tel" placeholder="연락처">
+                </div>
+                <div id="signin">
+                    <label class="sign" for="email">이메일 <span>&centerdot;</span></label><br>
+                    <input id="email" name="email" type="email" placeholder="이메일">
+                </div>
+                <div id="signin">
+                    <label class="sign" for="address">주소 <span>&centerdot;</span></label><br>
+                    <input id="address1" type="text" placeholder="주소"><br>
+                    <input id="address2" type="text" placeholder="상세주소">
+                </div>
+                <div id="signin">
+                    <label class="sign" for="birthday">생년월일 <span>&centerdot;</span></label><br>
+                    <select id="bir_yy" name="bir_yy">
+                        <option>연</option>
+                        <script>
+                            for(var i=1900; i<=2021;i++){
+                                document.write('<option value="'+i+'">'+i+'</option>')
+                            }
+                        </script>
+                    </select>
+                    <select id="bir_mm" name="bir_mm">
+                        <option>월</option>
+                        <script>
+                            for(var i=1; i<=12;i++){
+                                document.write('<option value="'+i+'">'+i+'</option>')
+                            }
+                        </script>
+                    </select>
+                    <select id="bir_dd" name="bir_dd">
+                        <option>일</option>
+                        <script>
+                            for(var i=1; i<=31;i++){
+                                document.write('<option value="'+i+'">'+i+'</option>')
+                            }
+                        </script>
+                    </select>
+                </div>
+                <div>
+                    <input id="agree_terms" name="agree_terms" type="hidden">
+                    <input id="user_info_agree" name="user_info_agree" type="hidden">
+                    <input id="marketing_sms_agree" name="marketing_sms_agree" type="hidden">
+                    <input id="marketing_email_agree" name="marketing_email_agree" type="hidden">
+                    <button class="btn-shape-border" type="button" onclick="formValidator()">가입하기</button>
+                    <script>
+                        let formValidator = function() {
+                            let userid = document.getElementById('userid').value;
+                            let email = document.getElementById('email').value;
+                            let password = document.getElementById('pass1').value;
+                            let passConfirm = document.getElementById('pass2').value;
+                            let male = document.getElementById('man');
+                            let female = document.getElementById('woman');
+                            let name = document.getElementById('name').value;
+                            let phone = document.getElementById('phone').value;
+                            let address = document.getElementById('address1').value;
+                            let addressDetail = document.getElementById('address2').value;
+                            let regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+                            let regNumber = /^[0-9]+/g;
+
+
+                            if(!userid) {
+                                alert('아이디를 입력하세요.');
+                                document.getElementById('userid').focus();
+                                return;
+                            }
+
+                            if(!password) {
+                                alert('비밀번호를 입력하세요.');
+                                document.getElementById('pass1').focus();
+                                return;
+                            } else {
+                                if(password.length<6) {
+                                alert('비밀번호는 최소 6자리 이상 입력해야 합니다.');
+                                document.getElementById('pass1').value='';
+                                document.getElementById('pass2').value='';
+
+                                document.getElementById('pass1').focus();
+
+                                return;
+                            }
+                            if(password!=passConfirm) {
+                                alert('비밀번호가 서로 다릅니다.');
+                                document.getElementById('pass1').value='';
+                                document.getElementById('pass2').value='';
+
+                                document.getElementById('pass1').focus();
+
+                                return;
+                            }
+                            }
+                            if(!passConfirm) {
+                                alert('비밀번호 확인을 입력하세요.');
+                                document.getElementById('pass2').focus();
+                                return;
+                            } else {
+                            if(password.length<6) {
+                                alert('비밀번호는 최소 6자리 이상 입력해야 합니다.');
+                                document.getElementById('pass1').value='';
+                                document.getElementById('pass2').value='';
+
+                                document.getElementById('pass1').focus();
+
+                                return;
+                            }
+                            if(password!=passConfirm) {
+                                alert('비밀번호가 서로 다릅니다.');
+                                document.getElementById('pass1').value='';
+                                document.getElementById('pass2').value='';
+
+                                document.getElementById('pass1').focus();
+
+                                return;
+                            }
+                            }
+                            if(!name) {
+                                alert('이름을 입력하세요.');
+                                document.getElementById('name').focus();
+                                return;
+                            }
+                            if(!male.checked && !female.checked) {
+                                alert('성별을 선택해주세요.');
+                                return;
+                            }
+                            if(!phone) {
+                                alert('전화번호를 입력하세요.');
+                                document.getElementById('phone').focus();
+                                return;
+                            }
+                            if(!regNumber.test(phone)) {
+                                alert('전화번호는 숫자만 입력할 수 있습니다.');
+                                document.getElementById('phone').value='';
+                                document.getElementsById('phone').focus();
+                            }
+                            if(!email) {
+                                alert('이메일을 입력하세요.');
+                                document.getElementById('email').focus();
+                                return;
+                            }
+                            if(!regExp.test(email)) {
+                                alert('이메일 형식이 아닙니다.');
+                                document.getElementById('email').value='';
+                                document.getElementById('email').focus();
+                                return;
+                            }
+                            if(!address) {
+                                alert('주소를 입력하세요.');
+                                document.getElementById('address1').focus();
+                                return;
+                            }
+                            if(!addressDetail) {
+                                alert('상세주소를 입력하세요.');
+                                document.getElementById('address2').focus();
+                                return;
+                            }            
+                            
+                            alert('회원가입이 완료되었습니다.');
+                            location.href="index.html";
+                        }
+                    </script>
+                </div>
+                </form>
+            </div>
+        </main>
+        <div class="display-footer">
+            <div class="background-footer">
+                <p class="contact">CONTACT<br>
+                주소 : 충청북도 청주시 서원구 충대로1, 충북대학교
+                대표번호 : 010-7647-0877 | 010-7935-2882<br>
+                TEL : 043)261-2114<br>
+                대표이사 : 남수연, 최서현<br>
+                Copyright 2021 movie project (c) Allrights Reserved
+                </p>
+            </div>                
+        </div>
+    </body>
+</html>

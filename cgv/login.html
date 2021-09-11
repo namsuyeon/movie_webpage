@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <style>
+            body{
+                background-image: url('./img/back2-1.jpg');
+                /* background-repeat: no-repeat; */
+                background-size: cover;
+                background-attachment: fixed;
+            }
+        </style>        
+    </head>
+    
+    <body>
+        <header>
+            <div class="user_info">
+                <a href="login.html">로그인&nbsp;|&nbsp;</a>
+                <a href="join_agree.html">회원가입</a>
+            </div>
+        </header>
+        <nav class="clear">
+            <div id="menu">
+                <ul class="main1">
+                    <li><a href="movie.html">영화</a></li>
+                    <li><a href="ticketing.html">예매</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="display">
+            <div class="background">
+                <main>
+                    <section>
+                        <h1>LOGIN</h1>
+                        <form>
+                            <div id="sign">
+                                <input id="userid" name="userid" type="text" placeholder="아이디"><br>
+                                <input id="pass" name="pass" type="password" placeholder="비밀번호"><br>
+                                <button class="btn-shape-login" type="button" onclick="login()">로그인</button><br>
+                                <script>
+                                    let login = function() {
+                                        let userid = document.getElementById('userid').value;
+                                        let password = document.getElementById('pass').value;
+
+                                        if(!userid) {
+                                            alert('아이디를 입력해주세요.');
+                                            document.getElementById('userid').focus();
+                                            return;
+                                        }
+                                        if(!password) {
+                                            alert('비밀번호를 입력해주세요.');
+                                            document.getElementById('pass').focus();
+                                            return;
+                                        }
+                                        alert('로그인이 완료되었습니다.');
+                                        location.href="index.html";
+                                    }                           
+                                </script>
+                            </div>
+                            <div class="align-left">
+                                <a href="join_agree.html">회원가입</a>
+                            </div>
+                            <div class="align-right">
+                                <a href="#">아이디&centerdot;비밀번호 찾기</a>
+                            </div>
+                        </form>
+                    </section>
+                    <section>
+                        <div class="moviechart-slide">
+                            <ul>
+                                <li><a href="#"><img src="./img/slide1.jpg" width="100%"></a></li>
+                                <li><a href="#"><img src="./img/slide2.jpg" width="100%"></a></li>
+                                <li><a href="#"><img src="./img/slide3.jpg" width="100%"></a></li>
+                                <li><a href="#"><img src="./img/slide4.jpg" width="100%"></a></li>
+                            </ul> 
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+        <div class="display-footer">
+            <div class="background-footer">
+                <p class="contact">CONTACT<br>
+                주소 : 충청북도 청주시 서원구 충대로1, 충북대학교
+                대표번호 : 010-7647-0877 | 010-7935-2882<br>
+                TEL : 043)261-2114<br>
+                대표이사 : 남수연, 최서현<br>
+                Copyright 2021 movie project (c) Allrights Reserved
+                </p>
+            </div>                
+        </div> 
+    </body>
+</html>
